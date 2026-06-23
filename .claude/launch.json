@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "wm2026",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:/Users/Haroon/Documents/ClaudeProjects/wm2026-live-munich/server.js"],
+      "port": 3001
+    }
+  ]
+}
