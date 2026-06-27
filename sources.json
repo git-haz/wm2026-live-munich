@@ -1,6 +1,26 @@
 {
   "sources": [
     { "name": "in-muenchen.de", "url": "https://www.in-muenchen.de/stadtleben/public-viewing-muenchen.html", "enabled": true },
-    { "name": "backstage.eu", "url": "https://www.backstage.eu", "enabled": true }
+    { "name": "backstage.eu", "url": "https://www.backstage.eu", "enabled": true },
+    { "name": "Mit Vergnügen München", "url": "https://muenchen.mitvergnuegen.com/2026/11-wm-public-viewing/", "enabled": true },
+    { "name": "Abendzeitung München", "url": "https://www.abendzeitung-muenchen.de/muenchen/public-viewing-in-diesen-106-locations-schaut-muenchen-die-fussball-wm-2026-gemeinsam-art-1131653", "enabled": true },
+    { "name": "MUC Blog", "url": "https://muc-blog.com/en/public-viewing-in-munich-world-cup-2026-83-locations-tips/", "enabled": true },
+    { "name": "CityTourCard München", "url": "https://citytourcard-muenchen.com/en/blog/easy-insider/public-viewing-in-muenchen", "enabled": true },
+    { "name": "Rausgegangen", "url": "https://rausgegangen.de/en/blog/public-viewing-spots-muenchen-wm/", "enabled": true },
+    { "name": "STORIA Restaurant", "url": "https://www.ristorantestoria.de/en/wm-2026-public-viewing-muenchen/", "enabled": true },
+    { "name": "HolidayCheck", "url": "https://www.holidaycheck.ch/ferien/deutschland/bayern/muenchen/inspiration/public-viewing-muenchen-wm-2026-beste-locations", "enabled": true },
+    { "name": "Olympiapark München", "url": "https://www.olympiapark.de/en/events/public-viewing-n2246", "enabled": true },
+    { "name": "Eventfabrik München", "url": "https://www.eventfabrik-muenchen.de/en/event-series/wm-public-viewing/", "enabled": true },
+    { "name": "TripAdvisor Forum", "url": "https://www.tripadvisor.com/ShowTopic-g187309-i118-k15540652-FIFA_World_Cup_2026_places_to_watch-Munich_Upper_Bavaria_Bavaria.html", "enabled": true },
+    { "name": "FANZO", "url": "https://www.fanzo.com/de/bars-kneipen/fussball/wm/muenchen/10237", "enabled": true },
+    { "name": "Stadt München", "url": "https://stadt.muenchen.de/news/public-viewing.html", "enabled": true },
+    { "name": "Fussballgucken.info", "url": "https://fussballgucken.info/locations/fussballkneipe/deutschland/muenchen", "enabled": true },
+    { "name": "t-online München", "url": "https://muenchen.t-online.de/region/muenchen/id_101277666/wm-2026-fuer-jeden-muenchner-der-passende-ort-zum-public-viewing.html", "enabled": true },
+    { "name": "Free Walking Tour", "url": "https://freewalkingtour.com/blog/2026-world-cup-munich-viewing/", "enabled": true },
+    { "name": "Munich A Jussi", "url": "https://munichajussi.com/where-to-watch-the-2026-world-cup-in-munich/", "enabled": true },
+    { "name": "Stadion.de", "url": "https://www.stadion.de/blog/wm-2026-public-viewing-deutschland-grosse-staedte-fanmeilen/", "enabled": true },
+    { "name": "MUC Blog (DE Spiel)", "url": "https://muc-blog.com/public-viewing-deutschland-elfenbeinkueste-muenchen-20-juni-2026/", "enabled": true },
+    { "name": "t-online Auftakt", "url": "https://muenchen.t-online.de/region/muenchen/id_101277666/wm-public-viewing-heute-in-muenchen-hier-laeuft-deutschland-curacao.html", "enabled": true },
+    { "name": "t-online Olympiapark", "url": "https://muenchen.t-online.de/region/muenchen/id_101277666/wm-2026-public-viewing-in-muenchen-alle-infos-im-ueberblick.html", "enabled": true }
   ]
 }
