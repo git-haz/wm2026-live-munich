@@ -62,8 +62,8 @@
       background: var(--card);
       padding: 8px 12px;
       display: flex;
+      flex-wrap: wrap;
       gap: 6px;
-      overflow-x: auto;
       flex-shrink: 0;
       box-shadow: var(--shadow);
       z-index: 999;
@@ -87,6 +87,27 @@
       color: white;
       border-color: var(--primary);
     }
+
+    .country-select {
+      padding: 6px 10px;
+      border-radius: 20px;
+      border: 1.5px solid var(--primary-light);
+      background: transparent;
+      color: var(--primary-light);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%232d6a4f'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 26px;
+      flex: 1 1 100%;
+      min-width: 0;
+    }
+
+    .country-select:focus { outline: none; border-color: var(--primary); }
 
     #map { flex: 1; z-index: 1; }
 
@@ -212,6 +233,9 @@
     <button class="filter-btn" data-filter="today">Heute</button>
     <button class="filter-btn" data-filter="tomorrow">Morgen</button>
     <button class="filter-btn" data-filter="week">Diese Woche</button>
+    <select class="country-select" id="country-filter">
+      <option value="">Alle Teams</option>
+    </select>
   </div>
 
   <div id="map"></div>
@@ -245,6 +269,7 @@
     let allVenues = [];
     let markers = [];
     let activeFilter = 'all';
+    let activeCountry = '';
 
     const WM_SCHEDULE = [
       { date: '2026-06-11', time: '21:00', teams: 'Mexiko - Südafrika', stage: 'Gruppe' },
@@ -287,14 +312,36 @@
     function getTomorrow() { const d = new Date(); d.setDate(d.getDate() + 1); return d.toISOString().split('T')[0]; }
     function getWeekEnd() { const d = new Date(); d.setDate(d.getDate() + 7); return d.toISOString().split('T')[0]; }
 
-    function getMatchesForFilter(filter) {
+    function getMatchesForFilter(filter, country) {
       const today = getToday(), tomorrow = getTomorrow(), weekEnd = getWeekEnd();
       return WM_SCHEDULE.filter(m => {
-        if (filter === 'today') return m.date === today;
-        if (filter === 'tomorrow') return m.date === tomorrow;
-        if (filter === 'week') return m.date >= today && m.date <= weekEnd;
+        let dateOk = true;
+        if (filter === 'today') dateOk = m.date === today;
+        else if (filter === 'tomorrow') dateOk = m.date === tomorrow;
+        else if (filter === 'week') dateOk = m.date >= today && m.date <= weekEnd;
+        if (!dateOk) return false;
+        if (country) return m.teams.toLowerCase().includes(country.toLowerCase());
         return true;
       });
+    }
+
+    function getAllCountries() {
+      const countries = new Set();
+      WM_SCHEDULE.forEach(m => {
+        m.teams.split(' - ').forEach(t => {
+          const name = t.trim();
+          if (name && !name.match(/^(Achtelfinale|Viertelfinale|Halbfinale|Finale|Spiel um)/)) {
+            countries.add(name);
+          }
+        });
+      });
+      return [...countries].sort((a, b) => a.localeCompare(b, 'de'));
+    }
+
+    function isGermanyOnly(venue) {
+      const d = (venue.details || '').toLowerCase();
+      return (d.includes('deutschland-spiele') || d.includes('dfb-spiele') || d.includes('deutsche nationalmannschaft'))
+        && !d.includes('alle spiele') && !d.includes('viele wm') && !d.includes('zahlreiche');
     }
 
     const map = L.map('map', { zoomControl: false }).setView(MUNICH_CENTER, 13);
@@ -317,12 +364,16 @@
       markers.forEach(m => map.removeLayer(m));
       markers = [];
 
-      const matches = getMatchesForFilter(activeFilter);
+      const matches = getMatchesForFilter(activeFilter, activeCountry);
       const matchText = matches.length > 0
         ? matches.map(m => `<b>${m.time}</b> ${m.teams} <span style="color:var(--text-muted)">(${m.stage})</span>`).join('<br>')
         : '<em>Keine Spiele in diesem Zeitraum</em>';
 
+      const showGermanyOnly = !activeCountry || activeCountry === 'Deutschland';
+
       allVenues.forEach(v => {
+        if (activeCountry && !showGermanyOnly && isGermanyOnly(v)) return;
+
         const popup = `
           <div class="popup-name">${v.name}</div>
           <div class="popup-addr">${v.address}</div>
@@ -334,7 +385,8 @@
       });
 
       const filterLabel = { all: 'Alle', today: 'Heute', tomorrow: 'Morgen', week: 'Diese Woche' }[activeFilter];
-      document.getElementById('venue-count').textContent = `${markers.length} Venues · ${filterLabel} · ${matches.length} Spiele`;
+      const countryLabel = activeCountry || 'Alle Teams';
+      document.getElementById('venue-count').textContent = `${markers.length} Venues · ${filterLabel} · ${countryLabel} · ${matches.length} Spiele`;
     }
 
     document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -344,6 +396,19 @@
         activeFilter = btn.dataset.filter;
         updateMarkers();
       });
+    });
+
+    // Country filter
+    const countrySelect = document.getElementById('country-filter');
+    getAllCountries().forEach(c => {
+      const opt = document.createElement('option');
+      opt.value = c;
+      opt.textContent = c;
+      countrySelect.appendChild(opt);
+    });
+    countrySelect.addEventListener('change', () => {
+      activeCountry = countrySelect.value;
+      updateMarkers();
     });
 
     // Info sheet
