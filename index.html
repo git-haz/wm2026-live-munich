@@ -15,7 +15,6 @@
       --text: #1a1a2e;
       --text-muted: #6c757d;
       --shadow: 0 2px 8px rgba(0,0,0,0.12);
-      --radius: 12px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -41,18 +40,7 @@
       flex-shrink: 0;
     }
 
-    header h1 {
-      font-size: 16px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .header-actions {
-      display: flex;
-      gap: 8px;
-    }
+    header h1 { font-size: 16px; font-weight: 700; }
 
     .icon-btn {
       background: rgba(255,255,255,0.15);
@@ -68,9 +56,7 @@
       font-size: 18px;
       transition: background 0.2s;
     }
-
     .icon-btn:hover { background: rgba(255,255,255,0.25); }
-    .icon-btn.active { background: var(--accent); color: var(--primary); }
 
     .filter-bar {
       background: var(--card);
@@ -102,14 +88,11 @@
       border-color: var(--primary);
     }
 
-    #map {
-      flex: 1;
-      z-index: 1;
-    }
+    #map { flex: 1; z-index: 1; }
 
     .venue-count {
       position: absolute;
-      bottom: 80px;
+      bottom: 24px;
       left: 50%;
       transform: translateX(-50%);
       background: var(--card);
@@ -122,30 +105,7 @@
       color: var(--text);
     }
 
-    .refresh-btn {
-      position: absolute;
-      bottom: 80px;
-      right: 16px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s;
-    }
-
-    .refresh-btn.spinning { animation: spin 1s linear infinite; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    /* Bottom sheet for sources */
+    /* Info bottom sheet */
     .overlay {
       display: none;
       position: fixed;
@@ -160,7 +120,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      max-height: 80dvh;
+      max-height: 60dvh;
       background: var(--card);
       border-radius: 16px 16px 0 0;
       z-index: 2001;
@@ -191,82 +151,17 @@
       padding: 12px 16px;
       overflow-y: auto;
       flex: 1;
-    }
-
-    .source-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 0;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    .source-item .source-info { flex: 1; min-width: 0; }
-    .source-item .source-name { font-weight: 600; font-size: 14px; }
-    .source-item .source-url { font-size: 12px; color: var(--text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-    .toggle {
-      width: 44px;
-      height: 24px;
-      background: #ccc;
-      border-radius: 12px;
-      border: none;
-      cursor: pointer;
-      position: relative;
-      transition: background 0.2s;
-      flex-shrink: 0;
-    }
-    .toggle.on { background: var(--primary); }
-    .toggle::after {
-      content: '';
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      width: 20px;
-      height: 20px;
-      background: white;
-      border-radius: 50%;
-      transition: transform 0.2s;
-    }
-    .toggle.on::after { transform: translateX(20px); }
-
-    .delete-btn {
-      background: none;
-      border: none;
-      color: #dc3545;
-      font-size: 18px;
-      cursor: pointer;
-      padding: 4px;
-    }
-
-    .add-form {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      padding-top: 12px;
-      border-top: 1px solid #eee;
-      margin-top: 8px;
-    }
-
-    .add-form input {
-      padding: 10px 12px;
-      border: 1.5px solid #ddd;
-      border-radius: 8px;
       font-size: 14px;
-      outline: none;
+      line-height: 1.6;
     }
 
-    .add-form input:focus { border-color: var(--primary); }
-
-    .add-form button {
-      padding: 10px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
+    .sheet-content dt { font-weight: 600; margin-top: 8px; }
+    .sheet-content dd { color: var(--text-muted); margin-bottom: 4px; }
+    .sheet-content code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12px;
     }
 
     .loading-overlay {
@@ -290,17 +185,10 @@
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
     }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* Leaflet popup overrides */
-    .leaflet-popup-content-wrapper {
-      border-radius: 10px !important;
-      box-shadow: var(--shadow) !important;
-    }
-    .leaflet-popup-content {
-      margin: 12px !important;
-      font-size: 13px;
-      line-height: 1.4;
-    }
+    .leaflet-popup-content-wrapper { border-radius: 10px !important; box-shadow: var(--shadow) !important; }
+    .leaflet-popup-content { margin: 12px !important; font-size: 13px; line-height: 1.4; }
     .popup-name { font-weight: 700; font-size: 14px; margin-bottom: 4px; color: var(--primary); }
     .popup-addr { color: var(--text-muted); margin-bottom: 6px; }
     .popup-details { font-size: 12px; }
@@ -315,10 +203,8 @@
 </head>
 <body>
   <header>
-    <h1>&#9917; WM 2026 Live</h1>
-    <div class="header-actions">
-      <button class="icon-btn" id="btn-sources" title="Datenquellen">&#9881;</button>
-    </div>
+    <h1>&#9917; WM 2026 Live in München</h1>
+    <button class="icon-btn" id="btn-info" title="Info">&#9432;</button>
   </header>
 
   <div class="filter-bar">
@@ -329,21 +215,22 @@
   </div>
 
   <div id="map"></div>
-
   <div class="venue-count" id="venue-count"></div>
-  <button class="refresh-btn" id="btn-refresh" title="Neu laden">&#8635;</button>
 
   <div class="overlay" id="overlay"></div>
-  <div class="bottom-sheet" id="sheet-sources">
+  <div class="bottom-sheet" id="sheet-info">
     <div class="sheet-handle"></div>
-    <div class="sheet-title">Datenquellen</div>
+    <div class="sheet-title">Info</div>
     <div class="sheet-content">
-      <div id="sources-list"></div>
-      <div class="add-form">
-        <input type="text" id="add-name" placeholder="Name (z.B. muenchen.de)">
-        <input type="url" id="add-url" placeholder="URL (https://...)">
-        <button id="btn-add-source">+ Quelle hinzufügen</button>
-      </div>
+      <p>Public-Viewing-Locations zur FIFA WM 2026 in München.</p>
+      <dl>
+        <dt>Datenquellen</dt>
+        <dd>in-muenchen.de, backstage.eu</dd>
+        <dt>Letztes Update</dt>
+        <dd id="info-updated">–</dd>
+        <dt>Venues aktualisieren</dt>
+        <dd><code>python update_venues.py</code></dd>
+      </dl>
     </div>
   </div>
 
@@ -359,7 +246,6 @@
     let markers = [];
     let activeFilter = 'all';
 
-    // WM 2026 schedule (group stage matches, times in CEST)
     const WM_SCHEDULE = [
       { date: '2026-06-11', time: '21:00', teams: 'Mexiko - Südafrika', stage: 'Gruppe' },
       { date: '2026-06-12', time: '18:00', teams: 'Argentinien - Marokko', stage: 'Gruppe' },
@@ -397,27 +283,12 @@
       { date: '2026-07-12', time: '21:00', teams: 'Finale', stage: 'Finale' },
     ];
 
-    function getToday() {
-      return new Date().toISOString().split('T')[0];
-    }
-
-    function getTomorrow() {
-      const d = new Date();
-      d.setDate(d.getDate() + 1);
-      return d.toISOString().split('T')[0];
-    }
-
-    function getWeekEnd() {
-      const d = new Date();
-      d.setDate(d.getDate() + 7);
-      return d.toISOString().split('T')[0];
-    }
+    function getToday() { return new Date().toISOString().split('T')[0]; }
+    function getTomorrow() { const d = new Date(); d.setDate(d.getDate() + 1); return d.toISOString().split('T')[0]; }
+    function getWeekEnd() { const d = new Date(); d.setDate(d.getDate() + 7); return d.toISOString().split('T')[0]; }
 
     function getMatchesForFilter(filter) {
-      const today = getToday();
-      const tomorrow = getTomorrow();
-      const weekEnd = getWeekEnd();
-
+      const today = getToday(), tomorrow = getTomorrow(), weekEnd = getWeekEnd();
       return WM_SCHEDULE.filter(m => {
         if (filter === 'today') return m.date === today;
         if (filter === 'tomorrow') return m.date === tomorrow;
@@ -426,7 +297,6 @@
       });
     }
 
-    // Map setup
     const map = L.map('map', { zoomControl: false }).setView(MUNICH_CENTER, 13);
     L.control.zoom({ position: 'topright' }).addTo(map);
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
@@ -460,15 +330,13 @@
           <div class="popup-details">${v.details.substring(0, 150)}${v.details.length > 150 ? '...' : ''}</div>
           <div class="popup-source">Quelle: ${v.source}</div>
         `;
-        const marker = L.marker([v.lat, v.lng], { icon: venueIcon }).addTo(map).bindPopup(popup, { maxWidth: 280 });
-        markers.push(marker);
+        markers.push(L.marker([v.lat, v.lng], { icon: venueIcon }).addTo(map).bindPopup(popup, { maxWidth: 280 }));
       });
 
       const filterLabel = { all: 'Alle', today: 'Heute', tomorrow: 'Morgen', week: 'Diese Woche' }[activeFilter];
       document.getElementById('venue-count').textContent = `${markers.length} Venues · ${filterLabel} · ${matches.length} Spiele`;
     }
 
-    // Filter buttons
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -478,80 +346,32 @@
       });
     });
 
-    // Sources sheet
+    // Info sheet
     const overlay = document.getElementById('overlay');
-    const sheet = document.getElementById('sheet-sources');
+    const sheet = document.getElementById('sheet-info');
+    document.getElementById('btn-info').addEventListener('click', () => { overlay.classList.add('open'); sheet.classList.add('open'); });
+    overlay.addEventListener('click', () => { overlay.classList.remove('open'); sheet.classList.remove('open'); });
 
-    function openSheet() { overlay.classList.add('open'); sheet.classList.add('open'); }
-    function closeSheet() { overlay.classList.remove('open'); sheet.classList.remove('open'); }
-
-    document.getElementById('btn-sources').addEventListener('click', () => {
-      loadSourcesList();
-      openSheet();
-    });
-    overlay.addEventListener('click', closeSheet);
-
-    async function loadSourcesList() {
-      const res = await fetch('/api/sources');
-      const data = await res.json();
-      const list = document.getElementById('sources-list');
-      list.innerHTML = data.sources.map(s => `
-        <div class="source-item">
-          <div class="source-info">
-            <div class="source-name">${s.name}</div>
-            <div class="source-url">${s.url}</div>
-          </div>
-          <button class="toggle ${s.enabled ? 'on' : ''}" onclick="toggleSource('${s.id}', ${!s.enabled})"></button>
-          <button class="delete-btn" onclick="deleteSource('${s.id}')">&#10005;</button>
-        </div>
-      `).join('');
-    }
-
-    window.toggleSource = async (id, enabled) => {
-      await fetch(`/api/sources/${id}`, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ enabled }) });
-      loadSourcesList();
-    };
-
-    window.deleteSource = async (id) => {
-      await fetch(`/api/sources/${id}`, { method: 'DELETE' });
-      loadSourcesList();
-    };
-
-    document.getElementById('btn-add-source').addEventListener('click', async () => {
-      const name = document.getElementById('add-name').value.trim();
-      const url = document.getElementById('add-url').value.trim();
-      if (!name || !url) return;
-      await fetch('/api/sources', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, url }) });
-      document.getElementById('add-name').value = '';
-      document.getElementById('add-url').value = '';
-      loadSourcesList();
-    });
-
-    // Load venues
-    async function loadVenues(refresh = false) {
+    // Load static venues.json
+    async function loadVenues() {
       const loading = document.getElementById('loading');
-      const btn = document.getElementById('btn-refresh');
       loading.classList.add('show');
-      btn.classList.add('spinning');
-
       try {
-        const res = await fetch(`/api/venues${refresh ? '?refresh=1' : ''}`);
+        const res = await fetch('venues.json');
         const data = await res.json();
         allVenues = data.venues || [];
+        if (data.updated) document.getElementById('info-updated').textContent = data.updated;
         updateMarkers();
         if (allVenues.length > 0) {
-          const group = L.featureGroup(markers);
-          map.fitBounds(group.getBounds().pad(0.1));
+          map.fitBounds(L.featureGroup(markers).getBounds().pad(0.1));
         }
       } catch (e) {
-        console.error('Failed to load venues:', e);
+        document.getElementById('venue-count').textContent = 'Fehler beim Laden der Venues';
+        console.error('Failed to load venues.json:', e);
       } finally {
         loading.classList.remove('show');
-        btn.classList.remove('spinning');
       }
     }
-
-    document.getElementById('btn-refresh').addEventListener('click', () => loadVenues(true));
 
     loadVenues();
   </script>

@@ -1,0 +1,181 @@
+{
+  "updated": "2026-06-27T02:47:43",
+  "venues": [
+    {
+      "name": "Axel F.",
+      "address": "Dachauer Str. 185, 80637 München",
+      "details": "Alle Deutschland-Spiele werden hier übertragen. Täglich ab 11:00 Uhr.",
+      "source": "in-muenchen.de",
+      "lat": 48.1567,
+      "lng": 11.5388
+    },
+    {
+      "name": "Backstage München",
+      "address": "Reitknechtstr. 6, 80639 München",
+      "details": "Bis zu sieben Viewing-Bereiche indoor/outdoor. Reservierungstickets inkl. Sitzplatz und Getränke (1 Maß oder 2 Softdrinks). Ab 18:00.",
+      "source": "backstage.eu",
+      "lat": 48.1483,
+      "lng": 11.528
+    },
+    {
+      "name": "Bamberger Haus",
+      "address": "Brunnerstr. 2, 80804 München",
+      "details": "Biergarten-Viewing. Mo-Fr ab 15:00, Sa-So ab 12:00. Reservierung mit Brotzeitbrettl.",
+      "source": "in-muenchen.de",
+      "lat": 48.173,
+      "lng": 11.5725
+    },
+    {
+      "name": "Champions Bar",
+      "address": "Berliner Str. 93, 80805 München",
+      "details": "12 Screens/Projektoren. Spezialmenü mit kanadischer, amerikanischer, mexikanischer Küche. Täglich ab 17:30.",
+      "source": "in-muenchen.de",
+      "lat": 48.173,
+      "lng": 11.588
+    },
+    {
+      "name": "Senatore Bar",
+      "address": "Sendlinger-Tor-Platz 5, 80336 München",
+      "details": "Terrasse bei gutem Wetter. Pizza und Drinks. Freier Eintritt. Dancefloor. Ab 18:00.",
+      "source": "in-muenchen.de",
+      "lat": 48.1338,
+      "lng": 11.5672
+    },
+    {
+      "name": "Fraunhofer München",
+      "address": "Fraunhoferstr. 9, 80469 München",
+      "details": "Biergarten und Indoor-Viewing. Reservierung unter 089/266460. Ab 17:30.",
+      "source": "in-muenchen.de",
+      "lat": 48.129,
+      "lng": 11.576
+    },
+    {
+      "name": "Giesinger Bräu Schänke",
+      "address": "Martin-Luther-Str. 2, 81539 München",
+      "details": "Viele WM-Spiele. Volles Biersortiment. Di-Sa ab 18:00.",
+      "source": "in-muenchen.de",
+      "lat": 48.119,
+      "lng": 11.578
+    },
+    {
+      "name": "Hirschgarten",
+      "address": "Hirschgarten 1, 80639 München",
+      "details": "Größter Biergarten der Stadt. DFB-Spiele mit Anstoß vor 23:00, Halbfinale, Spiel um Platz 3, Finale. Ab 11:00.",
+      "source": "in-muenchen.de",
+      "lat": 48.15,
+      "lng": 11.52
+    },
+    {
+      "name": "Hopfendolde",
+      "address": "Feilitzschstr. 17, 80802 München",
+      "details": "Angenehm preisgünstig. Darts, Kicker, Billard, Karaoke. Ab 12:00.",
+      "source": "in-muenchen.de",
+      "lat": 48.164,
+      "lng": 11.585
+    },
+    {
+      "name": "Michaeligarten",
+      "address": "Feichtstr. 10, 81735 München",
+      "details": "4,5 × 2,5m LED-Screen. Alle DFB-Spiele inkl. 22:00-Anstoß. Ab 12:00.",
+      "source": "in-muenchen.de",
+      "lat": 48.113,
+      "lng": 11.62
+    },
+    {
+      "name": "Midnightbazar",
+      "address": "Arnulfstr. 195-199, 80639 München",
+      "details": "15K-Projektionstechnik, ~300 Plätze. Einzelreservierung €7 (Sitzplatz + 2 Getränkegutscheine). Ab 16:00.",
+      "source": "in-muenchen.de",
+      "lat": 48.147,
+      "lng": 11.526
+    },
+    {
+      "name": "Ned Kelly's Australian Bar",
+      "address": "Frauenplatz 11, 80331 München",
+      "details": "Internationales Publikum. Foster's, Guinness, Kilkenny. Fingerfood. Ab 16:00.",
+      "source": "in-muenchen.de",
+      "lat": 48.1385,
+      "lng": 11.5735
+    },
+    {
+      "name": "Paulaner am Nockherberg",
+      "address": "Hochstr. 77, 81541 München",
+      "details": "Zwei große LED-Screens. Reservierter Bereich inkl. 10 Nockherberger. Start 14. Juni. Mo-Fr ab 16:00, Sa-So ab 12:00.",
+      "source": "in-muenchen.de",
+      "lat": 48.121,
+      "lng": 11.585
+    },
+    {
+      "name": "Paulaner Brauhaus",
+      "address": "Kapuzinerplatz 5, 80337 München",
+      "details": "Biergarten + Indoor. SB-Bereich. Reservierter Bereich €23,50/Person (Brotzeit + 1 Maß). Mo-Fr ab 11:00.",
+      "source": "in-muenchen.de",
+      "lat": 48.127,
+      "lng": 11.565
+    },
+    {
+      "name": "Paulaner Sportsbar Zum Stiftl",
+      "address": "Prälat-Zistl-Str. 10, 80331 München",
+      "details": "14 Flatscreens. Konzession bis 5 Uhr. Halbe nur 3,90€. Ab 15:00.",
+      "source": "in-muenchen.de",
+      "lat": 48.1365,
+      "lng": 11.576
+    },
+    {
+      "name": "Quentin's Palmengarten",
+      "address": "Bayerstr. 3-5, 80335 München",
+      "details": "12m² LED-Wand im Innenhof. Spritz-Kreationen, Weine, Bier, Snacks. Mo-Fr ab 17:00, Sa-So ab 12:00.",
+      "source": "in-muenchen.de",
+      "lat": 48.1395,
+      "lng": 11.565
+    },
+    {
+      "name": "Seehaus Biergarten",
+      "address": "Kleinhesselohe 3, 80802 München",
+      "details": "Am Kleinhesseloher See. 5×3m Outdoor-Screen. Free-TV-Spiele bis 22:00 Anstoß. Ab 11:30.",
+      "source": "in-muenchen.de",
+      "lat": 48.163,
+      "lng": 11.59
+    },
+    {
+      "name": "Stadion an der Schleißheimer Straße",
+      "address": "Schleißheimer Str. 82, 80797 München",
+      "details": "Fußballmuseum mit Theke. Reservierung schnell ausgebucht. 20-25 Walk-ins. Goaßnmaß und Laterndlmaß.",
+      "source": "in-muenchen.de",
+      "lat": 48.156,
+      "lng": 11.568
+    },
+    {
+      "name": "Tegernseer Tal Bräuhaus",
+      "address": "Tal 8, 80331 München",
+      "details": "Hochburg des Public Viewing. Fr-Sa bis 3:00, wochentags bis 1:00. Mo-Fr ab 11:00.",
+      "source": "in-muenchen.de",
+      "lat": 48.1355,
+      "lng": 11.58
+    },
+    {
+      "name": "Werksviertel-Mitte",
+      "address": "Knödelplatz, 81671 München",
+      "details": "Große LED-Wand, Food Trucks, nationenspezifische Angebote. Ab 11. Juni täglich ab 17:00.",
+      "source": "in-muenchen.de",
+      "lat": 48.127,
+      "lng": 11.605
+    },
+    {
+      "address": "Biergarten. Wer Plätze mit bester Sicht mit einer Reservierung absichern möchte, sollte wissen, dass damit eine verbindliche Abnahme von Brotzeitbrettern einhergeht. Bei einem Tisch mit zehn Personen sind zwei Bretter Standard. Für alle, die im Biergarten mit Brotzeitbrettbrettern reserviert haben, gibt es notfalls auch eine Schlechtwetteroption. Auf den Social-Media-Kanälen bekommt ihr wöchentlich eine Übersicht, welche Spiele im Biergarten live gezeigt werden. Adresse: Brunnerstr. 2, 80804 München",
+      "details": "er Haus (© Bamberger Haus) Auch das Team vom Bamberger Haus lässt sich nicht zweimal bitten und überträgt ein paar Spiele der Fußball WM 2026 live im Biergarten. Wer Plätze mit bester Sicht mit einer Reservierung absichern möchte, sollte wissen, dass damit eine verbindliche Abnahme von Brotzeitbrett",
+      "source": "in-muenchen.de",
+      "lat": 48.173,
+      "lng": 11.5725,
+      "name": "Biergarten. Wer Plätze mit bester Sicht mit einer Reservierung absichern möchte"
+    },
+    {
+      "address": "Landstr. 96, 81539 München",
+      "details": "und Softdrinks gibt’s auch Wein, Sours und Longdrinks sowie Sandwiches und eine ehrliche Leberkassemmel, falls der Magen knurrt. Adresse: Tegernseer Landstr. 96, 81539 München Nächste Haltestelle: U 1 Silberhornstraße Öffnungszeiten: Mittwoch bis Samstag ab 18 Uhr Mehr Infos: www.tsv1860.org WM 2026",
+      "source": "in-muenchen.de",
+      "lat": 48.113,
+      "lng": 11.578,
+      "name": "Landstr. 96"
+    }
+  ]
+}

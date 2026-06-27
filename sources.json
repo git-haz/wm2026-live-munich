@@ -1,0 +1,6 @@
+{
+  "sources": [
+    { "name": "in-muenchen.de", "url": "https://www.in-muenchen.de/stadtleben/public-viewing-muenchen.html", "enabled": true },
+    { "name": "backstage.eu", "url": "https://www.backstage.eu", "enabled": true }
+  ]
+}
